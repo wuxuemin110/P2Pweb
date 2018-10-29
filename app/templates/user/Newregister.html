@@ -1,0 +1,452 @@
+
+
+<style>
+	* {
+		margin: 0;
+		padding: 0;
+		font-family:"微软雅黑";
+		outline: 0;
+	}
+	
+	a:link {
+		text-decoration: none;
+	}
+	
+	a:hover {
+		text-decoration: none;
+	}
+	
+	a:active {
+		text-decoration: none;
+	}
+	
+	a:visited {
+		text-decoration: none;
+	}
+	
+	input {
+		outline: none;
+	}
+	
+	 :-moz-placeholder {
+		/* Mozilla Firefox 4 to 18 */
+		color: #cecece;
+	}
+	
+	 ::-moz-placeholder {
+		/* Mozilla Firefox 19+ */
+		color: #cecece;
+	}
+	
+	input:-ms-input-placeholder,
+	textarea:-ms-input-placeholder {
+		color: #cecece;
+	}
+	
+	input::-webkit-input-placeholder,
+	textarea::-webkit-input-placeholder {
+		color: #cecece;
+	}
+	
+	.verify-sms {
+		position: absolute;
+		top: -8px;
+		right: 0;
+		width: 130px;
+		height: 50px;
+	}
+	
+	.verify-img p {
+		font-size: 12px;
+		line-height: 12px;
+		text-align: center;
+		color: #3291db;
+	}
+	
+	.check-inner {
+		width: 321px;
+		height: 20px;
+		margin: 0px auto 0px auto;
+		color: #666;
+	}
+	
+	.check-inner input {
+		vertical-align: middle;
+		margin-top: -2px;
+		cursor: pointer;
+	}
+	
+	.check-inner a {
+		color: #666;
+	}
+	
+	.check-inner>label {
+		font-weight: normal;
+	}
+	
+	.login-btn-inner {
+		width: 260px;
+		height: 32px;
+		margin: 20px auto;
+	}
+	
+	.login-btn-inner>a {
+		text-shadow: 2px 2px 2px #337AB7;
+		color: #ffffff;
+		line-height: 32px;
+		font-size: 18px;
+		background-color: #3291db;
+		display: block;
+		text-align: center;
+		width: 260px;
+		height: 32px;
+		margin: 10px auto;
+		box-shadow: 1px 1px 1px #CCCCCC;
+	}
+	
+	.popover-content {
+		padding: 2px 10px;
+		font-size: 14px;
+		color: #DD2525;
+	}
+	
+	.loginwarp {
+		width: 100%;
+		background: url("resource/images/acticity/BT1.jpg") no-repeat center center;
+		height: 810px;
+		overflow: hidden;
+		
+	}
+	
+	.loginBg {
+		width: 1200px;
+		position: relative;
+		margin: 0px auto;
+	}
+	
+	.login {
+		top: 105px;
+		right: 0px;
+		position: absolute;
+		width: 467px;
+		height: 590px;
+		background-color: #ffe7b7;
+		border-radius: 30px;
+		box-shadow: 0 5px 16px 1px rgba(212, 56, 32, 0.3);
+	}
+	
+	
+	
+	.inputGroup {
+		width: 428px;
+		margin: 0px auto;
+		margin-bottom: 20px;
+		height: 64px;
+		background-color: #fff;
+		border-radius: 10px;
+	}
+	
+	.inputName input,
+	.inputPassword input {
+		background:transparent;
+		height: 64px;
+		border: 0px;
+		width: 100%;
+		font-size: 18px;
+		color: #999;
+		line-height: 64px;
+	}
+	
+	.inputName {
+		width: 428px;
+		height: 64px;
+		position: relative;
+		padding-left: 58px;
+	}
+	
+	.inputPassword {
+		width: 428px;
+		height:64px;
+		position: relative;
+		padding-left: 58px;
+	}
+	
+	.verifyCode {
+		position: relative;
+	}
+	
+	.verifyCode input {
+		
+		width: 240px;
+		height: 64px;
+		border: 0px;
+		font-size: 18px;
+		color: #999;
+		padding-left: 60px;
+		line-height: 64px;
+		
+	}
+	
+	.phoneCodeBg {
+		position: relative;
+	}
+	
+	.phoneCode {
+		width: 250px;
+		height: 64px;
+		position: relative;
+		padding-left: 60px;
+	}
+
+	
+	.phoneCode input {
+		background:transparent;
+		height: 64px;
+		border: 0px;
+		line-height: 64px;
+		font-size: 18px;
+		color: #999;
+	}
+	
+	.verifySms {
+		position: absolute;
+		top:9px;
+		right:14px;
+		width: 100px;
+		height: 48px;
+		line-height: 48px;
+		text-align: center;
+		
+		color: #de522f;
+		font-size: 18px;
+		
+	}
+	
+	.verifySms span{
+		width: 100px;
+		height: 48px;
+		line-height: 48px;
+		text-align: center;
+		display: inline-block;
+		font-size: 18px;
+		color: #de522f;
+		cursor: pointer;
+		
+
+		border:none;
+		outline:none;
+	}
+	
+	.verifyImg {
+		position: absolute;
+		top: 7px;
+		right: 11px;
+		width: 140px;
+		height: 50px;
+		background: #fff;
+	}
+	
+	.verifyImg img {
+		width: 140px;
+		height: 50px;
+		display: inline-block;
+	}
+	
+	.loginBtn {
+		width: 390px;
+		text-align: center;
+		margin: 0px auto;
+		padding-top: 24px;
+		padding-bottom: 15px;
+	}
+	.loginBtn .spanBlock {
+		background: #de522f;
+		border-radius: 30px;
+		width: 100%;
+		height: 60px;
+		line-height: 60px;
+		text-align: center;
+		font-size: 24px;
+		color: #fff;
+		display: inline-block;
+		    box-shadow: 0 9px 9px 0px rgba(255, 51, 0, 0.3);
+	}
+	
+	.loginBtn .spanNone {
+		background: #ccc;
+		border-radius: 30px;
+		width: 100%;
+		height: 60px;
+		line-height: 60px;
+		text-align: center;
+		font-size:24px;
+		color: #999;
+		display: inline-block;
+		display: none;
+	}
+	input:-webkit-autofill,
+	textarea:-webkit-autofill,
+	select:-webkit-autofill {
+		-webkit-text-fill-color: #ededed !important;
+		-webkit-box-shadow: 0 0 0px 1000px transparent inset !important;
+		background-color: transparent;
+		background-image: none;
+		transition: background-color 50000s ease-in-out 0s; //背景色透明  生效时长  过渡效果  启用时延迟的时间  
+	}
+	.loginbox1{
+		width: 100%;
+		height: 793px;
+		background: url('resource/images/acticity/BT2.jpg') no-repeat center center;
+	}
+	.loginbox2{
+		width: 100%;
+		height: 994px;
+		background: url('resource/images/acticity/BT3.jpg') no-repeat center center;
+	}
+	.loginbox3{
+		width: 100%;
+		height: 958px;
+		background: url('resource/images/acticity/BT4.jpg') no-repeat center center;
+	}
+	.loginbox4{
+		width: 100%;
+		height: 834px;
+		background: url('resource/images/acticity/BT5.jpg') no-repeat center center;
+	}
+	.login-tip{
+		overflow:hidden;
+		padding: 0 20px;
+	}
+	.login-tip h2{
+		float: left;
+		font-size: 30px;
+		color: #de522f;
+		margin-top: 34px;
+
+	}
+	.login-tip p{
+		float: right;
+		font-size: 22px;
+		color: #c1b7b1;
+		margin-bottom: 0px;
+		margin-top:33px;
+
+	}
+	.login-tip p a{
+		color: #de522f;
+		font-size: 22px;
+	}
+
+	.imgname{
+		position: absolute;
+		left: 15px;
+		top: 15px;
+	}
+	.login-inner-tab{
+		margin-top: 20px;
+	}
+</style>
+<div class="loginwarp">
+	<div class="loginBg">
+		<div class="login">
+			<div class="login-tip">
+				<h2>快速注册</h2>
+				<p>已有账号| <a href="/login">登录</a> </p>
+			</div>
+			<div style="display: block;" class="login-inner-tab">
+				<div class="inputGroup">
+					
+					<div class="inputName" data-rel="r_phone" data-container="body" data-toggle="popover" data-content="手机号码不能为空">
+						<img class="imgname" src="resource/images/acticity/X1.png" alt="">
+						<input ng-model="registerInfo.userInfo.phone" type="text" placeholder="请输入注册手机号码" autocomplete="new-password" name="phone">
+					</div>
+				</div>
+				<div class="inputGroup">
+					<div class="verifyCode" data-rel="l_verifyCode" data-container="body" data-toggle="popover" data-content="验证码不能为空">
+					<img class="imgname" src="resource/images/acticity/X2.png" alt="">
+						<input name="l_verifyCode" type="text" ng-model="imgCode" placeholder="请输入图片验证码" autocomplete="new-password">
+						<div class="verifyImg">
+							<img id="verificationCode" src="" ng-click="changeVerificationCode()">
+						</div>
+					</div>
+				</div>
+				<div class="inputGroup ">
+					<div class="phoneCodeBg" data-rel="r_verifyCode" data-container="body" data-toggle="popover" data-content="验证码不能为空">
+						<div class="phoneCode">
+						<img class="imgname" src="resource/images/acticity/X3.png" alt="">
+						<input ng-model="registerInfo.code" type="text" name="code" autocomplete="new-password" required="" placeholder="请输入验证码">
+						</div>
+
+						<div class="verifySms">
+							<span ng-click="sendSms()" ng-bind="description" ng-show="disabledFalse">获取验证码</span>
+							<span  ng-bind="description" ng-show="!disabledFalse">获取验证码</span>
+							<!--<input  ng-click="sendSms()" value="获取" onclick="settime(this)" />-->
+						</div>
+					</div>
+				</div>
+				<div class="inputGroup" style="display: none;">
+					<div class="phoneCodeBg" data-rel="r_verifyCode" data-container="body" data-toggle="popover" data-content="验证码不能为空">
+						<div class="phoneCode"><input  type="text" name="code" autocomplete="new-password" required="" placeholder="请输入验证码"></div>
+
+						<div class="verifySms">
+							<!--<span ng-click="sendSms()" >获取</span>-->
+							<input  ng-click="sendSms()" value="获取" onclick="settime(this)" />
+						</div>
+					</div>
+				</div>
+				<div class="inputGroup">
+					<div class="inputPassword" data-rel="l_password" data-container="body" data-toggle="popover" data-content="密码不能为空">
+					<img class="imgname" src="resource/images/acticity/X4.png" alt="">
+						<input type="password" name="password" value="" style="display:none;" autocomplete="off" />
+						<input ng-model="registerInfo.user.password" type="password" required="" placeholder="请输入6~16位字母和数字登录密码" autocomplete="new-password" name="password">
+					</div>
+				</div>
+
+				<div class="inputGroup" style='display: none'>
+					<div class="inputPassword" data-rel="r_recommendId" data-container="body" data-toggle="popover" data-content="">
+						<input ng-model="registerInfo.userInfo.recommendCode" type="text" placeholder="输入邀请人手机号（可不填）">
+					</div>
+				</div>
+				<div class="check-inner" style="display: block;">
+					<label data-rel="r_checkRead" data-container="body" data-toggle="popover" data-content="您必须同意注册协议"><input checked="checked" ng-click="checkbox($event)" name="checkRead" type="checkbox">&nbsp;&nbsp;已阅读并同意<a
+                        href="../../registration.pdf" target="_blank">《注册协议》</a></label>
+				</div>
+				<div class="loginBtn">
+					<div style="cursor: pointer;" ng-click="register()" class="spanBlock">注册立领988元红包</div>
+					<div style="cursor: pointer;" class="spanNone">注册立领988元红包</div>
+				</div>
+
+			</div>
+		</div>
+	</div>
+</div>
+<div class="loginbox1">
+
+</div>
+<div class="loginbox2">
+
+</div>
+<div class="loginbox3">
+
+</div>
+<div class="loginbox4">
+
+</div>
+<script>
+    var countdown=60;
+    function settime(obj) {
+        if (countdown == 0) {
+            obj.removeAttribute("disabled");
+            obj.value="获取";
+            countdown = 60;
+            return;
+        } else {
+            obj.setAttribute("disabled", true);
+            obj.value="重新发送(" + countdown + ")";
+            countdown--;
+        }
+        setTimeout(function() {
+                settime(obj) }
+            ,1000)
+    }
+</script>

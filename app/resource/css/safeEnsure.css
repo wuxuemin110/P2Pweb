@@ -1,0 +1,181 @@
+ html, body, button, input, select, textarea {
+    font: 12px/1.5 "微软雅黑", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+ 
+  .banner{
+    	width: 100%;
+        height: 400px;
+        overflow: hidden;
+         background: url(../images/safeEnsure/banner1.jpg) no-repeat center center;
+    }
+    .banner img{
+    	width: 100%;
+        height: 400px;
+    }
+    .divwrap{
+    	margin: 0px;
+    	padding: 0px;
+    	overflow: hidden;
+    }
+    .safeEnsure {
+      width: 100%;
+      padding: 0px;
+      margin: 0px;
+    }
+.safeEnsure ul{
+	padding: 0;
+	margin: 0px;
+}
+    .safeEnsure li {
+      width: 100%;
+      
+    }
+    .licolor{
+    	background: #fff;
+    }
+    .divLi{
+    	position: relative;
+    	width: 1200px;
+    	margin: 0px auto;
+    	height: 460px;
+    }
+    .divText1{
+    	top: 125px;
+    	left: 180px;
+    	position: absolute;
+    	width: 420px;
+    }
+    
+    .divText h2{
+    	color: #1c90f2;
+    	font-size: 26px;
+    	margin: 0px;
+    	margin-bottom: 25px; 	
+    }
+    .divText p{
+    	color: #323333;
+    	font-size: 16px;
+    	line-height: 30px;	
+    }
+    .divImg1{
+    	position: absolute;
+    	right:180px;
+    	top: 110px;
+    	width: 240px;
+    	height: 240px;
+    }
+     .divText2{
+    	top: 125px;
+    	right: 180px;
+    	position: absolute;
+    	width: 420px;
+    }
+    .divImg2{
+    	position: absolute;
+    	left:180px;
+    	top: 110px;
+    	width: 240px;
+    	height: 240px;
+    }
+    
+    .divText3{
+    	top: 125px;
+    	left: 180px;
+    	position: absolute;
+    	width: 420px;
+    }
+    
+    /*.divImg3{
+    	position: absolute;
+    	right:30px;
+    	top: 85px;
+    	width: 390px;
+    	height: 235px;
+    }*/
+    
+    .divText4{
+    	top: 125px;
+    	right: 20px;
+    	position: absolute;
+    	width: 580px;
+    }
+    
+    /*.divImg4{
+    	position: absolute;
+    	left:35px;
+    	top: 85px;
+    	width: 390px;
+    	height: 250px;
+    } */
+    .divText5{
+    	top: 50px;
+    	left: 35px;
+    	position: absolute;
+    	width: 595px;
+    }
+ /*.divImg5{
+    	position: absolute;
+    	right:30px;
+    	top: 85px;
+    	width: 390px;
+    	height: 230px;
+    }*/
+    .divText5 h2{
+    	color: #333;
+    	font-size: 28px;
+    	margin-bottom: 25px; 	
+    }
+    .divText5 p{
+    	color: #666;
+    	font-size: 20px;
+    	line-height: 32px;	
+    }
+    
+ .divText6{
+    	top: 95px;
+    	right: 30px;
+    	position: absolute;
+    	width: 520px;
+    }
+ /*.divImg6{
+    	position: absolute;
+    	left:35px;
+    	top: 85px;
+    	width: 390px;
+    	height: 230px;
+    }*/
+    
+.divText7{
+    	top: 80px;
+    	left: 35px;
+    	position: absolute;
+    	width: 535px;
+    }
+    
+    /*.divImg7{
+    	position: absolute;
+    	right:30px;
+    	top: 85px;
+    	width: 390px;
+    	height: 230px;
+    }
+.divBtn{
+	width: 180px;
+	height: 46px;
+	line-height: 46px;
+	text-align: center;
+	border-radius: 5px;
+	background: #DF0707;
+	font-size: 20px;
+	margin: 40px auto;
+	cursor: pointer;
+}
+
+.divBtn a{
+	display: inline-block;
+	width: 180px;
+	height: 46px;
+	line-height: 46px;
+	color: #fff;
+}*/

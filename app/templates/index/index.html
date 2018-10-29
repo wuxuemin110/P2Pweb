@@ -1,0 +1,958 @@
+<div ng-include="'templates/layout/top.html'">
+</div>
+<!--样式-->
+<link rel="stylesheet" href="resource/css/fan.css">
+<!--<link rel="stylesheet" href="resource/css/carousel.css">-->
+<!--<link rel="stylesheet" href="resource/css/luara.left.css">-->
+<link rel="stylesheet" href="resource/css/animate.css">
+<link rel="stylesheet" href="resource/css/index.css?version=1.0" type="text/css">
+<!--<link rel="stylesheet" href="resource/css/news.css">-->
+<script type="text/javascript" src="resource/js/jquery.SuperSlide.js"></script>
+<script src="resource/js/jquery.easing.1.3.js"></script>
+<style>
+.background {
+    width: 100%;
+    position: relative;
+    /*height: 2730px;*/
+    background: #F2F2F2;
+}
+
+.background_img {
+    /*position: absolute;
+		top: 0;
+		left: 50%;
+		width: 1920px;
+		margin-left: -960px;*/
+    /*background-image: url("../resource/images/activity_new/pc_back.jpg");
+        background-repeat: no-repeat;*/
+}
+
+.noticeBg {
+    height: 48px;
+    line-height: 48px;
+    /*background: url("../resource/images/index/noticeBg.png") no-repeat #fff 15px center;*/
+    background: #fff;
+    padding: 0 20px;
+    font-size: 16px;
+    color: #666;
+}
+
+.noticeBg .noticeTitleName {
+    float: left;
+    display: inline-block;
+    padding-right: 15px;
+    color: #333;
+}
+
+.noticeBg span.more {
+    float: right;
+}
+
+.noticeBg span.more a {
+    /*background: url("../resource/images/index/more.png") no-repeat #fff right center;*/
+    padding-right: 23px;
+    display: inline-block;
+}
+
+.noticeBg a {
+    color: #999;
+}
+
+.safeData {
+    background: #fff;
+    margin-top: 1px;
+    height: 140px;
+    overflow: hidden;
+}
+
+.safeData li {
+    float: left;
+    height: 140px;
+    width: 400px;
+}
+
+.safeData li a {
+    display: inline-block;
+    height: 140px;
+    width: 400px;
+}
+
+.btnlast {
+    width: 120px;
+    height: 30px;
+    line-height: 30px;
+    padding: 0;
+    border-radius: 0;
+}
+
+.animate-positive {
+    animation: animate-positive 2s;
+    transition: width 1s linear 0s;
+    -webkit-transition: width .6s ease;
+    transition: width 0.6s ease;
+}
+
+@-webkit-keyframes animate-positive {
+    0% {
+        width: 0%;
+    }
+}
+
+@keyframes animate-positive {
+    0% {
+        width: 0%;
+    }
+}
+
+
+.APPdown{
+    position: fixed;
+    left: 0px;
+    top: 50%;
+    z-index: 1000;
+}
+</style>
+<div ng-cloak>
+    <!--头部-->
+    <!--头部结束-->
+    <!--轮播-->
+    <div class="APPdown">
+        <img src="resource/images/index/APPdown.png" alt="">
+    </div>
+    <div class="index-carousel-body">
+        <div class="new_banner">
+            <div id="slides" class="visual" style="width:1920px;">
+                <ul class="slides_container" style="overflow: hidden; position: relative;">
+                    <li ng-repeat="x in IndexImag">
+                        <a href="{{x.url}}" style="width:100%; display:inline-block;height: 500px;background: url('{{x.picture}}') no-repeat center center;" ng-show="x.outSite==true" target="_blank"></a>
+                        <a href="{{x.url}}" style="width:100%; display:inline-block;height: 500px;background: url('{{x.picture}}') no-repeat center center;" ng-show="x.outSite==false"></a>
+                    </li>
+                </ul>
+                <ul class="slideControl sdt_menu outer" id="sdt_menu">
+                    <li style="width: 100%;" ng-repeat="x in IndexImag" on-finish-render-filters2>
+                        <a href="javascript:;" rel="{{x.number}}" target="_blank">
+							<img ng-src="{{x.picture}}" alt="" style="width: 0px; height: 0px; left: 85px; ">
+							<span class="sdt_active" style="height: 0px;"></span>
+							<span class="sdt_wrap" style="top: 0px;"><span class="sdt_link" id="sdtLink1">{{x.title}}</span></span>
+						</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="background">
+        <div id="addNewYear" class="">
+            <div id="main">
+                <div class="noticeBg">
+                    <span class="more"><a href="/platformMessage?page=1"  >更多</a></span>
+                    <div class="noticeTitleName">
+                        平台公告:
+                    </div>
+                    <div class="main-frame-content" id="demo">
+                        <div class="top1" id="demo1">
+                            <a class="notice-li" href="/notices/{{x.id}}" ng-repeat="x in noticeList"><span class="liTitle">{{x.title}}</span><span class="date">{{x.updatedTime|newDate:'yyyy-MM-dd'}}</span></a>
+                        </div>
+                        <div class="top1" id="demo2">
+                            <a class="notice-li" href="/notices/{{x.id}}" ng-repeat="x in noticeList"><span class="liTitle">{{x.title}}</span><span class="date">{{x.updatedTime|newDate:'yyyy-MM-dd'}}</span></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="safeData">
+                    <ul>
+                        <li>
+                            <a href="#"><img src="resource/images/index/safeData1.jpg"></a>
+                        </li>
+                        <li>
+                            <a href="#"><img src="resource/images/index/safeData2.jpg"></a>
+                        </li>
+                        <li>
+                            <a href="#"><img src="resource/images/index/safeData3.jpg"></a>
+                        </li>
+                        <!--<li>
+							<a href="#"><img src="resource/images/index/safeData4.jpg"></a>
+						</li>-->
+                    </ul>
+                </div>
+                <!-- 新手标 -->
+                <div id="newUser">
+                    <!--<div class="newUserTitle">
+						新手专享
+					</div>-->
+                    <a href="#" class="newUser-left"><img src="resource/images/index/newUser-left.jpg"></a>
+                    <div class="newUser-right">
+                        <div class="newPeople-name" title="">{{plans[0].name}}</div>
+                        <div class="newUserImg" title=""><img src="resource/images/index/newUser-right.png"></div>
+                        <div class="newPeople-detail">
+                            <div class="fl">
+                                <div style="display:inline-block;">
+                                    <div class="newPeople-nums">
+                                        <div class="newPeople-nums-div">
+                                            <div class="newPeople-num fontYellow">
+                                                {{(plans[0].rate/10)| currency:"":1}}<span class=""><font ng-show="plans[0].labelType==1">+{{plans[0].rasingRate/10}}</font>%</span>
+                                            </div>
+                                            <div class="newPeople-txt">预期年化</div>
+                                        </div>
+                                        <div class="newPeople-nums-div">
+                                            <div class="newPeople-num fontBlack">
+                                                {{plans[0].staging}}<span class="">天</span>
+                                            </div>
+                                            <div class="newPeople-txt">项目周期</div>
+                                        </div>
+                                        <div class="newPeople-nums-div" style="width:240px;">
+                                            <div class="newPeople-num fontBlack">
+                                                {{plans[0].amount | PointToYuan | currency:"":0}}<span class="">元</span>
+                                            </div>
+                                            <div class="newPeople-txt">项目金额</div>
+                                        </div>
+                                        <!--<div class="newPeople-nums-div" style="width:280px;">
+											<div class="invest-progress" style="margin-top: 20px;">
+												<div class="invest-progress-bg">
+													<div class="invest-progress-now animate-positive wow" ng-style="newPlans">
+
+													</div>
+												</div>
+											</div>
+											<div class="newPeople-txt" style="margin-top: 5px;">投标进度: <span style="color: #fe4c58;">{{((plans[0]['nowSum'] / plans[0]['amount']) * 100) > 100 ? 100 : (plans[0]['nowSum'] / plans[0]['amount'] * 100)| parseInt}}%</span></div>
+										</div>-->
+                                        <div class="newPeople-nums-div">
+                                            <div class="newPeople-btn">
+                                                <a href="/join/{{plans[0].id}}">
+													<span ng-show="plans[0].state==0 && plans[0].amount>plans[0].nowSum">立即投资</span>
+													<span ng-show="plans[0].state==0 && (plans[0].amount==plans[0].nowSum || plans[0].amount < plans[0].nowSum)">已经满标</span>
+													<span ng-show="plans[0].state==2">已经结束</span>
+													<span ng-show="plans[0].state==1">还款中</span>
+													<span ng-show="plans[0].state==3">等待开放</span>
+
+												</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- 投标列表 -->
+                <div id="invest">
+                    <div class="invest-title">
+                        <span><a href="/investment">更多项目</a></span>优质推荐
+                    </div>
+                    <!-- 散标 -->
+                    <div class="invest-main" style="margin-bottom:0; min-height: 350px;">
+                        <ul class="investTable">
+                            <li ng-repeat="plan in bottomPlans1" class="invest-li">
+                                <a href="/join/{{plan.id}}">
+                                    <!--<span class="firstCast1" ng-show="plan.labelType==2"></span>-->
+                                    <span class="firstCast" ng-show="plan.rasingRate>0"></span>
+                                    <div class="investWrap">
+                                        <div class="invest-name">{{plan.name}}</div>
+                                    </div>
+                                    <div class="invest-nums">
+                                        <div class="rateDiv">
+                                            {{plan.rate/10}}<span style="font-size:16px"><font ng-show="plan.rasingRate>0">+{{plan.rasingRate/10}}</font>%</span>
+                                            <div class="invest-txt">
+                                                预期年化
+                                            </div>
+                                        </div>
+                                        <!-- <div>{{plan}}</div> -->
+                                        <div class="proCycle"><span ng-show="plan.stagingUnit=='day'">{{plan.staging}}<span style="font-size:16px; padding-left: 5px;">天</span></span>
+                                            <span ng-show="plan.stagingUnit=='month'">{{plan.staging}}<span style="font-size:16px;padding-left: 5px;">个月</span></span>
+                                            <div class="invest-txt">
+                                                项目周期
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div style="line-height: 50px; overflow: hidden;">
+                                        <div class="rateDiv" style="font-size:16px;color: #666">项目金额</div>
+                                        <div class="proCycle" style=" color: #eda637;">{{plan.amount | PointToYuan | currency:"":0}}<span style="font-size:16px;color: #323333;">元</span></div>
+                                    </div>
+                                    <div class="invest-progress" style="margin-top: 10px;">
+                                        <div class="invest-progress-bg">
+                                            <div class="invest-progress-now animate-positive wow" ng-style="{'width':'{{((plan['nowSum'] / plan['amount']) * 100)>100 ? 100:(plan['nowSum'] / plan['amount']*100) | parseInt}}%'}">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="newPeople-txt"><span>{{(plan.amount-plan.nowSum)<0?0:(plan.amount-plan.nowSum) | PointToYuan | currency:"":0}}&nbsp;元</span>剩余可投:</div>
+                                    <!--<div class="invest-btn1">
+									<a  href="/join/{{plan.id}}">
+											<button ng-show="plan.state==0 && (plan.amount==plan.nowSum || plan.amount < plan.nowSum)" type="button" class=" btn-danger investmentBtn man">已经满标
+                                </button>
+											<button ng-show="plan.state==0 && plan.amount>plan.nowSum" type="button" class=" btnYellow investmentBtn investmentBtnBorder">立即投资
+                                </button>
+											<button ng-show="plan.state==1" type="button" class=" btn-primary investmentBtn man">还款中
+                                </button>
+											<button ng-show="plan.state==2" type="button" class=" btn-primary  investmentBtn man">
+                                   已还完
+                                </button>
+											<button ng-show="plan.state==3" type="button" class=" btn-info investmentBtn">
+                                    等待开放
+                                </button>
+                               </a>
+										</div>-->
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- 投标列表 -->
+                <div class="wow" style="visibility: hidden;"></div>
+            </div>
+            <div class="platBg">
+                <div class="platformWarp f-left">
+                    <div class="platformTitle">
+                        <a href="/platformMessage?page=2">更多</a>媒体资讯
+                    </div>
+                    <div class="platformUl">
+                        <ul class="platformImg">
+                            <li ng-repeat="x in newsList">
+                                <img ng-src="{{x.coverImage}}">
+                            </li>
+                        </ul>
+                        <ul class="platformText">
+                            <li ng-repeat="x in newsList">
+                                <a href="/news/{{x.id}}">
+                                    <div class="divA">
+                                        <span class="spanTitle">{{x.title}}</span>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="noticeWarp f-left">
+                    <div class="noticeTitle">
+                        <a href="/platformMessage?page=1">更多</a>平台公告
+                    </div>
+                    <ul>
+                        <li ng-repeat="x in noticeList">
+                            <a href="/notices/{{x.id}}">
+                                <div class="divA">
+                                    <!--<span class="spanDiv">{{x.updatedTime|newDate:'yyyy.MM.dd'}}</span>--><span class="spanTitle">{{x.title}}</span>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--公司动态-->
+    <!--尾部-->
+    <div>
+        <div style="background: #fff;overflow: hidden;margin-top: 20px;">
+            <div class="partnerBg">
+                <h2>合作伙伴</h2>
+                <div id="Marquee_x">
+                    <ul>
+                        <li>
+                            <div>
+                                <a href="http://www.wdzx.com"><img src="resource/images/index/partner1.jpg"></a>
+                            </div>
+                            <div>
+                                <a href="http://www.wangdaidongfang.com"><img src="resource/images/index/partner2.jpg"></a>
+                            </div>
+                            <div>
+                                <a href="http://www.licaizhijia.com"><img src="resource/images/index/partner3.png"></a>
+                            </div>
+                            <div>
+                                <a href="https://www.aliyun.com"><img src="resource/images/index/partner4.jpg"></a>
+                            </div>
+                            <div>
+                                <a href="http://www.wdzj.com"><img src="resource/images/index/partner5.jpg"></a>
+                            </div>
+                            <div>
+                                <a href="https://www.duozhuan.cn"><img src="resource/images/index/partner6.jpg"></a>
+                            </div>
+                            <div>
+                                <a href="http://www.wdzx.com"><img src="resource/images/index/partner1.jpg"></a>
+                            </div>
+                            <div>
+                                <a href="http://www.wangdaidongfang.com"><img src="resource/images/index/partner2.jpg"></a>
+                            </div>
+                            <div>
+                                <a href="http://www.licaizhijia.com"><img src="resource/images/index/partner3.png"></a>
+                            </div>
+                            <div>
+                                <a href="https://www.aliyun.com"><img src="resource/images/index/partner4.jpg"></a>
+                            </div>
+                            <div>
+                                <a href="http://www.wdzj.com"><img src="resource/images/index/partner5.jpg"></a>
+                            </div>
+                            <div>
+                                <a href="https://www.duozhuan.cn"><img src="resource/images/index/partner6.jpg"></a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div ng-include="'templates/layout/bottom.html'"></div>
+    </div>
+    <!-- 侧边导航 -->
+    <!--<div class="side_nav">
+		<div class="rankingNew_main">
+			<div>
+				<ul class="clearfix">
+					<li style="border-radius:2px 0 0 2px;" class="whiteBg">日</li>
+					<li class="middle">月</li>
+					<li style="border-radius:0 2px 2px 0;">总</li>
+				</ul>
+				<span></span>
+				<div class="rank_Div1 clearfix">
+					<span style="width:68px;">排名</span>
+					<span style="width:88px;">用户名</span>
+					<span style="width:108px;">投资金额</span>
+				</div>
+				<div class="rank_Div">
+
+					<ol>
+						<div id="dayInvest" class="">
+							<li class="bgfrist{{x.number}}" ng-repeat="x in dayList">
+								<i></i>
+								<span>{{x.user_name}}</span>
+								<em>￥{{x.sum_money | PointToYuan | currency:"":0}}</em>
+							</li>
+							
+						</div>
+					</ol>
+					<ol style="display: none;">
+						<div id="monthInvest">
+							<li class="bgfrist{{x.number}}" ng-repeat="x in monthList">
+								<i></i>
+								<span>{{x.user_name}}</span>
+								<em>￥{{x.sum_money | PointToYuan | currency:"":0}}</em>
+							</li>
+						</div>
+					</ol>
+					<ol style="display: none;">
+						<div id="totalInvest">
+							<li class="bgfrist{{x.number}}" ng-repeat="x in totalList">
+								<i></i>
+								<span>{{x.user_name}}</span>
+								<em>￥{{x.sum_money | PointToYuan | currency:"":0}}</em>
+							</li>
+						</div>
+					</ol>
+				</div>
+			</div>
+
+		</div>
+		<div class="one">
+			<div>
+				<p class="p3">全国服务热线</p>
+				<p class="p1" style="margin-top:5px;">400-661-1571</p>
+				<p class="p3">人工服务时间</p>
+				<p style="margin-top:5px;">工作日 <span class="p1"> 9:00-17:30</span></p>
+			</div>
+		</div>
+		<div class="two">
+			<a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=2319463793&site=qq&menu=yes" style="display: block; position: absolute;top:0px;left: 0px;width: 50px; height: 51px;"></a>
+			<div>		
+				<p class="pQq">在线咨询</p>
+				<p style="margin-top:7px;">工作日 <span class="p1"> 9:00-17:30</span></p>
+				<p style="margin-top:8px;">qq群: <span class="p1"> 569818379</span></p>
+			</div>
+		</div>
+		<div class="the" style="display: none;">
+			<div>
+				<img src="">
+				<p class="p1">扫一扫下载app</p>
+			</div>
+		</div>
+		<div class="four">
+		
+				<div class="calcucon">
+				<div id="main" style="height: 380px;width:305px;">
+					<table style="margin:auto; width:304px;height: 320px;">
+						<thead>
+							<span class="time">
+							<input id="radio1" class="tmpinput" checked="checked" name="limitType" type="radio"><em>月</em>
+							<input id="radio2" class="tmpinput" name="limitType" type="radio"><em>天</em>
+						</span>
+						</thead>
+						<tbody>
+							<tr>
+								<td>
+									<input size="5" id="money" placeholder="投标金额(必填)" class="compute num1" class="text" type="text">
+									<i>元</i>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<input id="yearRate" size="5" placeholder="利率(必填)" class="compute num1" maxlength="5" class="text" type="text">
+									<i>%</i>
+
+								</td>
+							</tr>
+							<tr style="display: none;">
+								<td>
+									<input size="5" placeholder="投标奖励(必填)" id="prize" class="compute num1" class="text" type="text" value="0">
+									<i>%</i>
+								</td>
+							</tr>
+							<tr style="opacity: 1; display: none;">
+								<td>
+									<input id="fee" size="5" placeholder="管理费" maxlength="5" class="compute num1" class="text" type="text">
+									<i>%</i>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<input size="5" id="limitTime" placeholder="期限(必填)" maxlength="5" class="compute num2" class="text" type="text">
+									<i class="tmptime">月</i>
+									<span class="time2">
+
+							<input id="checkbox1" checked="checked" type="checkbox"><em>年利率</em>
+							<input id="checkbox2" type="checkbox"><em>日利率</em>
+							</span>
+								</td>
+							</tr>
+							<tr>
+								<td class="moneyxu">
+									<p>还款方式：</p>
+									<select id="repayType">
+										<option value="3">按月付息到期还本</option>
+										<option value="4">一次性还本付息</option>
+									</select>
+								</td>
+							</tr>
+						</tbody>
+						<thead>
+							<tr>
+								<th class="allincome" colspan="2">总收益：
+									<span id="earnMoney" style="font-size: 18px;color: #f68080;">0</span>元
+								</th>
+							</tr>
+						</thead>
+
+					</table>
+				</div>
+			</div>
+
+		</div>
+		<div class="five" style="display: none;">
+			<div>
+				<a href="#">
+					<img src="" style=" margin: 18px 0 0px 44px; width: 78px;display: block;">
+					<p class="p1" style=" text-align: center; margin-top: 9px; margin-left: -3px;">点击咨询</p>
+				</a>
+			</div>
+		</div>
+		<div class="return_top"></div>
+	</div>-->
+</div>
+<script>
+//浏览器升级
+function getByClass(oParent, sClass) {
+    if (oParent.getElementsByClassName) {
+        return oParent.getElementsByClassName(sClass);
+    } else {
+        var re = new RegExp("\\b" + sClass + "\\b");
+        var result = [];
+        var aEle = oParent.getElementsByTagName("*");
+        for (var i = 0; i < aEle.length; i++) {
+            if (re.test(aEle[i].className)) {
+                result.push(aEle[i]);
+            }
+        }
+        return result;
+    }
+};
+//if(window.navigator.userAgent.indexOf('MSIE 6') != -1 || window.navigator.userAgent.indexOf('MSIE 7') != -1 ||window.navigator.userAgent.indexOf('MSIE 8') != -1){
+//  $('.tmpwen').show();
+//  $('.buttonsxq').hide();
+//  $('.css3btn .ovrly').hide();
+//}
+function tabCut(obj, obj2, oClass) {
+    obj.click(function() {
+        $(this).addClass(oClass).siblings().removeClass(oClass);
+        var index = obj.index(this);
+        obj2.eq(index).show().siblings().hide();
+    });
+}
+tabCut($(".rankingNew_main ul li"), $(".rankingNew_main ol"), "whiteBg")
+var tmpinput = getByClass(document, 'tmpinput');
+var tmptime = getByClass(document, 'tmptime')[0];
+//alert(tmpinput.length)
+for (var i = 0; i < tmpinput.length; i++) {
+    tmpinput[i].onclick = function() {
+        if (tmpinput[0].checked == true) {
+            tmptime.innerHTML = "月";
+        } else {
+            tmptime.innerHTML = "天";
+        }
+
+    }
+}
+$('.tmpulside li').hover(function() {
+    $(this).find('div').show();
+    $(this).find('div').animate({
+        opacity: 1
+    });
+}, function() {
+    $(this).find('div').hide();
+    $(this).find('div').animate({
+        opacity: 0
+    });
+})
+$(function() {
+    $("input.num1").bind("keyup blur", function() {
+        var value = $(this).val();
+        $(this).val(value.replace(/[^\.\d]/g, ''));
+    });
+
+    $("input.num2").bind("keyup blur", function() {
+        var value = $(this).val();
+        $(this).val(value.replace(/[^\d]/g, ''));
+    });
+
+    $(".compute").keyup(computeFun);
+    $("#repayType").change(computeFun);
+    //      $("input:radio").click(function () {
+    //          /*if ($("#radio2").attr("checked")) {
+    //           $("#repayType").attr("disabled", "disabled");
+    //           } else {
+    //           $("#repayType").removeAttr("disabled");
+    //           }*/
+    //          computeFun();
+    //      });
+    $("#radio1").click(function() {
+        $("#radio1").attr("checked", "checked");
+        $("#radio2").removeAttr("checked");
+        computeFun();
+    })
+    $("#radio2").click(function() {
+        $("#radio2").attr("checked", "checked");
+        $("#radio1").removeAttr("checked");
+        computeFun();
+    })
+    $("#checkbox1").click(function() {
+        $("#checkbox1").attr("checked", "checked");
+        $("#checkbox2").removeAttr("checked");
+        computeFun();
+    });
+
+    $("#checkbox2").click(function() {
+        $("#checkbox2").attr("checked", "checked");
+        $("#checkbox1").removeAttr("checked");
+        computeFun();
+    });
+});
+
+function computeFun() {
+
+    var totalYearRate, yearRate, monthRate, prize, fee, money, earnMoney;
+    var display;
+    var limitTime, season;
+
+    totalYearRate = 0;
+    yearRate = parseFloat($("#yearRate").val()); //获取年利率
+    if ($("#checkbox2").attr("checked")) yearRate = yearRate * 365; //获取日利率
+    prize = parseFloat($("#prize").val());
+    fee = parseFloat($("#fee").val() / 100);
+    limitTime = parseFloat($("#limitTime").val()); //获取期限
+    money = parseFloat($("#money").val()); //获取金额
+    yearRate = yearRate * (1 - fee);
+
+    if ($("#radio1").attr("checked") && yearRate > 0 && limitTime > 0) {
+
+        if ($("#repayType").val() == 1) {
+            totalYearRate = 24.00 * prize / (limitTime + 1) + yearRate;
+            earnMoney = (money * yearRate / 1200 * Math.pow((1 + yearRate / 1200), limitTime) / (Math.pow((1 + yearRate / 1200), limitTime) - 1) * limitTime - money + money * prize / 100);
+        } else if ($("#repayType").val() == 2) {
+            season = Math.ceil(limitTime / 3);
+            earnMoney = money * yearRate * (1 + season) / 800 + money * prize / 100;
+            totalYearRate = (yearRate * 3 + 24 * prize / (limitTime / 3 + 1)) / 3;
+        } else if ($("#repayType").val() == 3) {
+            earnMoney = money * yearRate * limitTime / 1200 + money * prize / 100;
+            totalYearRate = (yearRate * limitTime + 12 * prize) / limitTime;
+        } else if ($("#repayType").val() == 4) {
+            earnMoney = money * yearRate * limitTime / 1200 + money * prize / 100;
+            totalYearRate = yearRate + prize * 12 / limitTime;
+        }
+
+        $("#totalYearRate").html(Math.round(totalYearRate * 100) / 100);
+        $("#monthRate").html(Math.round(totalYearRate / 12 * 100) / 100);
+        $("#earnMoney").html(Math.round(earnMoney * 100) / 100);
+        $("#prizeMoney").html(Math.round(money * prize) / 100);
+    }
+
+    if ($("#radio2").attr("checked") && yearRate > 0 && limitTime > 0) {
+
+        totalYearRate = yearRate + prize / limitTime * 365;
+        monthRate = totalYearRate / 12;
+        earnMoney = money * yearRate * limitTime / 36000 + money * prize / 100;
+
+        $("#totalYearRate").html(Math.round(totalYearRate * 100) / 100);
+        $("#monthRate").html(Math.round(totalYearRate / 12 * 100) / 100);
+        $("#earnMoney").html(((earnMoney * 100) / 100).toFixed(2));
+        $("#prizeMoney").html(Math.round(money * prize) / 100);
+    }
+}
+
+//返回顶部
+$(".return_top").bind("click", function() {
+    var speed = 1000;
+    $('body,html').animate({
+        scrollTop: 0
+    }, speed);
+    return false;
+})
+var isVisable = false;
+/*console.log($(window).scrollTop())*/
+if ($(window).scrollTop() > 0) {
+    isVisable = true;
+    $(".return_top").animate({
+        "height": "53px"
+    }, 100, "swing");
+}
+$(window).scroll(function() {
+    if ($(window).scrollTop() == 0) {
+        $(".return_top").animate({
+            "height": "0px"
+        }, 100, "swing");
+        isVisable = false;
+    } else if (!isVisable) {
+        isVisable = true;
+        $(".return_top").animate({
+            "height": "53px"
+        }, 100, "swing");
+    }
+});
+</script>
+<!--<script type="text/javascript">
+	$("#carousel img").css("cursor", "pointer");
+	$("#carousel img").click(function() {
+		var flag = parseInt($("#carousel img[Class='carousel-img fade active']").attr('sort'));
+		switch(flag) {
+			case 0:
+				location = "/hongbaohuodong.php";
+				break;
+			case 1:
+				location = "news_detail.php?r=72&t=1";
+				break;
+			case 2:
+				location = "";
+				break;
+			case 3:
+				location = "news_detail.php?r=69&t=1";
+				break;
+			case 4:
+				location = "";
+				break;
+		}
+	});
+</script>-->
+<script src="resource/js/slides.jquery.js"></script>
+<!--<script>
+	BizQQWPA.add({
+		aty: '0', //接入类型，0-自动分流，1-指定工号，2-指定分组
+		a: '0', //指定接入者，aty=0时无效，1时表示指定的工号，2时表示指定的分组
+		type: '1', //WPA 的样式类型，1-按钮型，2-匿名聊天，10~12-浮动型
+		nameAccount: '4000894855', //必选参数，营销QQ号码
+		parent: 'qq-box', //指定WPA在页面中的父元素，默认值为document.body
+	});
+</script>-->
+<script>
+//	$(function() {
+//		// 悬浮窗口
+//		$(".yb_conct").hover(function() {
+//			$(".yb_conct").css('right', '5px');
+//			$(".yb_bar .yb_ercode").css('height', '150px');
+//			$(".yb_bar .yb_QQ").css('height', '205px');
+//		}, function() {
+//			$(".yb_conct").css("right", "-127px");
+//			$(".yb_bar .yb_ercode").css("height", "53px");
+//			$(".yb_bar .yb_QQ").css("height", "53px");
+//		});
+//		// 返回顶部
+//		$(".yb_top").click(function() {
+//			$("html,body").animate({
+//				'scrollTop': '0px'
+//			}, 300)
+//		});
+//
+//	});
+//
+//	function autoScroll(obj) {
+//		$(obj).find(".top1").animate({
+//			marginTop: "-48px"
+//		}, 500, function() {
+//			$(this).css({
+//				marginTop: "0px"
+//			}).find("a:first").appendTo(this);
+//		})
+//	}
+//	$(function() {
+//		setInterval('autoScroll(".maquee")', 3000);
+//	});
+//	var oDate1 = new Date();
+//	var oDate2 = new Date("2017-1-27");
+//	if(oDate1.getTime() > oDate2.getTime()) {
+//		$("#addNewYear").addClass("background_img");
+//		$(".bg58").addClass("bg_none");
+//	}
+</script>
+<script>
+//合作伙伴滚动
+(function($) {
+    $.fn.jcMarquee = function(options) {
+        var defaults = {
+            'marquee': 'x',
+            'margin_bottom': '0',
+            'margin_right': '0',
+            'speed': '10'
+        };
+        var options = $.extend(defaults, options);
+        return this.each(function() {
+            var $marquee = $(this),
+                $marquee_scroll = $marquee.children('ul');
+            $marquee_scroll.append("<li class='clone'>" + "</li>");
+            $marquee_scroll.find('li').eq(0).children().clone().appendTo('.clone');
+            var $marquee_left = $marquee_scroll.find('li');
+            if (options.marquee == 'x') {
+                var x = 0;
+                $marquee_scroll.css('width', '1000%');
+                $marquee_left.find('div').css({
+                    'margin-right': options.margin_right
+                });
+                //					$marquee_left.css({
+                //						'margin-right': options.margin_right
+                //					});
+
+                function Marquee_x() {
+                    $marquee.scrollLeft(++x);
+                    _margin = parseInt($marquee_left.find('div').css('margin-right'));
+                    if (x == $marquee_left.width() + _margin) {
+                        x = 0
+                    };
+                };
+                var MyMar = setInterval(Marquee_x, options.speed);
+                $marquee.hover(function() {
+                    clearInterval(MyMar);
+                }, function() {
+                    MyMar = setInterval(Marquee_x, options.speed);
+                });
+            }
+            if (options.marquee == 'y') {
+                var y = 0;
+                $marquee_scroll.css('height', '1000%');
+                $marquee_left.find('div').css('margin-bottom', options.margin_bottom);
+                $marquee_left.css('margin-bottom', options.margin_bottom);
+
+                function Marquee_y() {
+                    $marquee.scrollTop(++y);
+                    _margin = parseInt($marquee_left.find('div').css('margin-bottom'));
+                    if (y == $marquee_left.height() + _margin) {
+                        y = 0
+                    };
+                };
+                var MyMar = setInterval(Marquee_y, options.speed);
+                $marquee.hover(function() {
+                    clearInterval(MyMar);
+                }, function() {
+                    MyMar = setInterval(Marquee_y, options.speed);
+                });
+            };
+        });
+    };
+    $('#Marquee_x').jcMarquee({
+        'marquee': 'x',
+        'margin_right': '25px',
+        'speed': 10
+    });
+})(jQuery)
+
+$(function() {
+    //		$('#slides').slides({
+    //			container: 'slides_container',
+    //			preload: true,
+    //			play: 4000,
+    //			pause: 1500,
+    //			hoverPause: true,
+    //			effect: 'slide',
+    //			slideSpeed: 850,
+    //			next: 'prev',
+    //			prev: 'next'
+    //		});
+    //
+    //		$("#sdt_menu li").eq(0).addClass("current");
+    //		$('#sdt_menu > li').bind('mouseenter', function() {
+    //			var $elem = $(this);
+    //			$elem.find('img').stop(true).animate({
+    //				'width': '132px',
+    //				'height': '60px',
+    //				'left': '0px'
+    //			}, 400, 'easeOutBack').andSelf().find('.sdt_wrap').stop(true).animate({
+    //				'top': '35px'
+    //			}, 500, 'easeOutBack').andSelf().find('.sdt_active').stop(true).animate({
+    //				'height': '35px'
+    //			}, 300, function() {
+    //				var $sub_menu = $elem.find('.sdt_box');
+    //				if($sub_menu.length) {
+    //					var left = '170px';
+    //					if($elem.parent().children().length == $elem.index() + 1)
+    //						left = '-170px';
+    //					$sub_menu.show().animate({
+    //						'left': left
+    //					}, 200);
+    //				}
+    //			});
+    //
+    //		}).bind('mouseleave', function() {
+    //			var $elem = $(this);
+    //			var $sub_menu = $elem.find('.sdt_box');
+    //			if($sub_menu.length > 0) {
+    //				$sub_menu.hide().css('left', '0px');
+    //			}
+    //			$elem.find('.sdt_active').stop(true).animate({
+    //				'height': '0px'
+    //			}, 300).andSelf().find('img').stop(true).animate({
+    //				'width': '0px',
+    //				'height': '0px',
+    //				'left': '85px'
+    //			}, 400).andSelf().find('.sdt_wrap').stop(true).animate({
+    //				'top': '0'
+    //			}, 500);
+    //		});
+    $(".appClose").click(function() {
+        $(".appPromptBg").hide();
+    });
+    $(".appBtn").click(function() {
+        $(".appPromptBg").hide();
+    });
+    $(".appDown").click(function() {
+        $(".appPromptBg").show();
+    });
+
+});
+
+function showPromptBg() {
+    document.getElementById("appPromptBg").style.display = "block";
+
+}
+</script>
+<script>
+var speed = 50;
+var MyMar2;
+clearInterval(MyMar2);
+demo = document.getElementById("demo");
+demo1 = document.getElementById("demo1");
+demo2 = document.getElementById("demo2");
+demo2.innerHTML = demo1.innerHTML
+
+function roll() {
+    if (demo2.offsetTop - demo.scrollTop <= 0)
+        demo.scrollTop -= demo1.offsetHeight
+    else {
+        demo.scrollTop++
+    }
+}
+MyMar2 = setInterval(roll, speed)
+demo.onmouseover = function() {
+    clearInterval(MyMar2)
+}
+demo.onmouseout = function() {
+    MyMar2 = setInterval(roll, speed)
+}
+</script>

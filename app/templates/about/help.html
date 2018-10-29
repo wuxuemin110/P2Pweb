@@ -1,0 +1,135 @@
+<!--头部-->
+<div ng-cloak>
+<div ng-include="'templates/layout/top.html'"></div>
+<!--头部结束-->
+<link rel="stylesheet" href="resource/css/about.css" type="text/css">
+<style type="text/css">
+    body {
+        font-family: "Microsoft YaHei", "微软雅黑" !important;
+        font-size: 14px !important;
+    }
+   
+</style>
+<div class="helpBg">
+<div class="helpBanner">
+	
+</div>
+<div class="helpSelf">
+	<h2>
+		自助服务
+	</h2>
+	<span>快捷服务，帮你快速解决问题。</span>
+	<ul>
+		<li>
+			<a href="/user/userSafeCenter">
+				<span class="one"></span>
+			    <i>修改登陆密码</i>
+			</a>
+			
+		</li>
+		<li>
+			<a href="/user/userSafeCenter">
+				<span class="two"></span>
+			    <i>修改交易密码</i>
+			</a>
+		</li>
+		<li>
+			<a href="/user/userBankCard">
+				<span class="three"></span>
+			    <i>绑定银行卡</i>
+			</a>
+		</li>
+		<li>
+			<a href="/user/userInvite">
+				<span class="four"></span>
+			    <i>查询推广记录</i>
+			</a>
+		</li>
+	</ul>
+</div>
+<div class="regularService">
+	<h2>常规服务</h2>
+	<span>为您答疑，让理财更放心。</span>
+	<div class="regularServiceData">
+		 <ul class="topUl">
+		 	<li ng-class="{'activeLi':liIndex==1}" ng-click="liIndex=1">常见问题</li>
+		 	<li ng-class="{'activeLi':liIndex==2}" ng-click="liIndex=2" style="border-left: 1px solid #fff; border-right: 1px solid #fff;">产品介绍</li>
+		 	<li ng-class="{'activeLi':liIndex==3}" ng-click="liIndex=3">名词解释</li>
+		 </ul>
+		 
+		<div ng-show="liIndex==1">
+			 <div class="leftProblem">
+			 	   <ul>
+			 	   	<li ng-class="{'leftProblemLi':leftProblem1=={{x.number}}}" ng-click="leftProblem1Fun(x)" ng-repeat="x in itemList"><i></i><span class="titleSpan">{{x.title}}</span></li>
+			 	   	  <!--<li ng-class="{'leftProblemLi':leftProblem1==1}" ng-click="leftProblem1=1"><i></i>关于注册和登陆</li>
+			 	   	  <li ng-class="{'leftProblemLi':leftProblem1==2}" ng-click="leftProblem1=2"><i></i>关于存管银行开户</li>
+			 	   	   <li ng-class="{'leftProblemLi':leftProblem1==3}" ng-click="leftProblem1=3"><i></i>关于充值和提现</li>
+			 	   	    <li ng-class="{'leftProblemLi':leftProblem1==4}" ng-click="leftProblem1=4"><i></i>关于红包</li>
+			 	   	     <li ng-class="{'leftProblemLi':leftProblem1==5}" ng-click="leftProblem1=5"><i></i>关于投资</li>
+			 	   	     <li ng-class="{'leftProblemLi':leftProblem1==6}" ng-click="leftProblem1=6"><i></i>关于回款</li>-->
+			 	   </ul>
+			 </div>
+			 <div class="rightAnswerBg">
+			 	<div class="rightAnswer" ng-bind-html="x.content | DHtml" ng-show="leftProblem1=={{x.number}}" ng-repeat="x in itemList">
+			 	</div>
+			      
+			 </div>
+		</div>
+		<div ng-show="liIndex==2">
+			<div class="leftProblem">
+			 	   <ul>
+			 	   	  <li ng-class="{'leftProblemLi':leftProblem2==1}" ng-click="leftProblem1=2"><i></i><span class="titleSpan">什么是毕投金服？</span></li>
+			 	   </ul>
+			 </div>
+			  <div class="rightAnswerBg">
+			       <div class="rightAnswer" ng-show="leftProblem2==1">
+			       	   &nbsp;&nbsp;&nbsp;&nbsp;毕投金服（www.bitoujf.com）互联网金融平台系杭州兴丰信息科技有限公司开发运行的独立产品，实缴资本五千万元，高管团队由具有多年银行信贷、风控经验及互联网技术、运营专业人才组成。毕投金服秉承小额分散、规范透明的经营理念，坚持走推动金融改革创新的普惠金融之路，倾力为广大出借人与借款人提供优质便捷、安全可靠的网络借贷信息中介服务。
+
+			       </div>
+			      </div>
+		</div>
+		<div ng-show="liIndex==3">
+			 <div class="leftProblem">
+			 	   <ul>
+			 	   	  <li ng-class="{'leftProblemLi':leftProblem3==1}" ng-click="leftProblem3=1"><i></i><span class="titleSpan">红包</span></li>
+			 	   	  <li ng-class="{'leftProblemLi':leftProblem3==2}" ng-click="leftProblem3=2"><i></i><span class="titleSpan">投标奖励</span></li>
+			 	   	   <li ng-class="{'leftProblemLi':leftProblem3==3}" ng-click="leftProblem3=3"><i></i><span class="titleSpan">累计收益</span></li>
+			 	   	    <li ng-class="{'leftProblemLi':leftProblem3==4}" ng-click="leftProblem3=4"><i></i><span class="titleSpan">累计投资</span></li>
+			 	   	     <li ng-class="{'leftProblemLi':leftProblem3==5}" ng-click="leftProblem3=5"><i></i><span class="titleSpan">可用余额</span></li>
+			 	   	     <li ng-class="{'leftProblemLi':leftProblem3==6}" ng-click="leftProblem3=6"><i></i><span class="titleSpan">账户总额</span></li>
+			 	   	     <li ng-class="{'leftProblemLi':leftProblem3==7}" ng-click="leftProblem3=7"><i></i><span class="titleSpan">预期年化</span></li>
+			 	   </ul>
+			 </div>
+			 <div class="rightAnswerBg">
+			       <div class="rightAnswer" ng-show="leftProblem3==1">
+					   毕投金服的红包分为抵扣红包和现金红包，抵扣在购买理财产品时可以直接抵扣，不予提现。现金红包会直接充值到您的可用余额中，可以提现。
+			       </div>
+			        <div class="rightAnswer" ng-show="leftProblem3==2">
+			       	  指用户在投标后获得利息以外，还会额外获得固定或百分比的投标金额奖励。
+			       </div>
+			        <div class="rightAnswer" ng-show="leftProblem3==3">
+			       	  指用户在毕投金服加入各理财产品累计赚取的收益总和。
+			       </div>
+			        <div class="rightAnswer" ng-show="leftProblem3==4">
+			       	  指用户在毕投金服累计加入各理财产品的资金总和（包含已使用的红包金额）。
+			       </div>
+			        <div class="rightAnswer" ng-show="leftProblem3==5">
+			       	  指可以用来进行提现或者投资的金额。
+			       </div>
+			        <div class="rightAnswer" ng-show="leftProblem3==6">
+			       	 账户总额=可用余额+待收总额+冻结金额。
+			       </div>
+			        <div class="rightAnswer" ng-show="leftProblem3==7">
+			       	  借款人支付的利息折算到年所对应的收益率。
+			       </div>
+			 </div>
+		</div>
+	</div>
+</div>
+</div>
+
+
+<!--尾部-->
+<div><div ng-include="'templates/layout/bottom.html'"></div></div>
+<!--尾部结束-->
+</div>

@@ -1,0 +1,104 @@
+<link rel="stylesheet" href="resource/css/userBankCard.css">
+<div ng-cloak="">
+	<!--头部-->
+	<div ng-include="'templates/layout/top.html'"></div>
+	<!--头部结束-->
+	<style>
+		* {
+			font-family: '微软雅黑';
+		}
+		
+		body {
+			background-color: #e3e3e3;
+		}
+		
+		dl,
+		dt,
+		dd {
+			display: block;
+			margin: 0;
+		}
+		
+		a {
+			text-decoration: none;
+			color: #333;
+		}
+		
+	</style>
+	<div class="center-container" style="background-color: #ffffff;" >
+		<div ng-include="'templates/layout/userLeft.html'"></div>
+
+		<div class="userBankBg">
+			<h3><span>上次登录：{{ UserInfo.lastLoginTime | newDate:"yyyy-MM-dd HH:mm:ss" }}</span>我的银行卡</h3>
+
+			<div class="userBankCon">
+				<!--没绑定银行卡显示页面-->
+				<div ng-if="bankIndex==1">
+					<div class="userBankDiv">
+						<div class="userBank">
+							<div class="bankBtn" ng-click="bankBtn()">
+
+							</div>
+						</div>
+						<div class="userBankRule">
+							<h2>温馨提示：</h2>
+							<p>
+							审核本人与身份证上的照片是否一致，原银行卡和新银行卡是否和持卡人提供的资料一致，严格按如下换卡流程执行：
+							<br> 1.提供身份证正反面、新银行卡照片；
+							<br> 2.提供本人与身份证、新银行卡的合照；
+							<br> 3.若是因原银行卡丢失换卡，需提供原银行卡的挂失证明和新卡的开户证明；
+							<br>4.若是因不支持代扣或其他情况换卡，需提供原银行卡照片、原银行卡的交易流水。
+
+						</p>
+						</div>
+					</div>
+
+				</div>
+				
+				<!--已绑定银行卡显示页面-->
+				<div ng-show="bankIndex==3">
+					<div class="userBank">
+						<div class="bankBorder">
+							<div class="bankName"><img src="../../resource/images/user/{{bankInfo[0]['bankCode']}}.png"></div>
+							<div class="cardNumber">储蓄卡<span ng-bind="bankInfo[0]['cardNumber']"></span></div>
+							<div class="cardholder">持卡人 <span ng-bind="userInfo['realName']"></span></div>
+						</div>
+					</div>
+					<div class="userBankRule">
+						<h2>温馨提示：</h2>
+
+						<p>
+							审核本人与身份证上的照片是否一致，原银行卡和新银行卡是否和持卡人提供的资料一致，严格按如下换卡流程执行：
+							<br> 1.提供身份证正反面、新银行卡照片；
+							<br> 2.提供本人与身份证、新银行卡的合照；
+							<br> 3.若是因原银行卡丢失换卡，需提供原银行卡的挂失证明和新卡的开户证明；
+							<br>4.若是因不支持代扣或其他情况换卡，需提供原银行卡照片、原银行卡的交易流水。
+
+						</p>
+					</div>
+
+				</div>
+
+			</div>
+
+		</div>
+
+		<div class="clear"></div>
+	</div>
+	<!--尾部-->
+	<div ng-include="'templates/layout/bottom.html'"></div>
+	<!--尾部结束-->
+
+</div>
+<script>
+	//	$(function() {
+	//		
+	//		$(".bankBtn").click(
+	//			
+	//			function(){
+	//			$(".userBankDiv").hide();
+	//			$(".submitBank").show();
+	//			}
+	//		)
+	//	})
+</script>

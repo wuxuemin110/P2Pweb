@@ -1,0 +1,29 @@
+ #pagination li{
+    	
+	display: inline-block;
+
+    }
+    *{
+    	outline: none;
+    }
+   .pagination>li>a, .pagination>li>span{
+    	border: 1px solid #D9D9DC;
+    	margin: 0px 4px;
+    	font-size: 12px;
+    	border-radius: 3px !important;
+    }
+    .pagination>.active>a, .pagination>.active>a:focus, .pagination>.active>a:hover, .pagination>.active>span, .pagination>.active>span:focus, .pagination>.active>span:hover{
+    	
+    z-index: 2;
+    color: #EDA637;
+    cursor: default;
+    background-color: #fff;
+    border-color: #EDA637;
+    border-radius: 3px;
+}
+  .pagination>li>a:focus, .pagination>li>a:hover, .pagination>li>span:focus, .pagination>li>span:hover{
+  	    z-index: 3;
+    color: #EDA637;
+    background-color: #fff;
+    border-color: #EDA637;
+  }
